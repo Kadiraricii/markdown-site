@@ -44,3 +44,26 @@
 - **Kaynaklar**: Bilgiler, araçların resmi belgelerinden, proje sayfalarından ve ağ topluluklarından (örn. NANOG) derlenmiştir.
 - **Sınırlamalar**: traceroute-nanog’un IPv6 desteği hakkında sınırlı bilgi mevcut; varsayımlar IPv4 odaklı kullanımına dayanır.
 - **Öneri**: Genel kullanım için lft.db (görsel çıktı), IPv6 için traceroute6.db, güvenlik testi için tcptraceroute.db tercih edilebilir.
+
+
+
+
+
+
+-------------
+# Traceroute Araçları: IPv4 vs IPv6 Hap Bilgi
+
+| **Araç** | **IPv4** | **IPv6** | **Kullanım** | **Avantaj** | **Dezavantaj** |
+|----------|----------|----------|--------------|-------------|---------------|
+| **traceroute.db** | Tam (ICMP/UDP) | Kısmi (traceroute6.db gerekir) | Basit ağ tanılama | Yaygın, kolay | IPv6 zayıf, sınırlı özellik |
+| **traceroute6.db** | Yok | Tam (ICMPv6/UDP) | IPv6 ağlar | IPv6’ya özel | IPv4 yok, dar kapsam |
+| **tcptraceroute.db** | Tam (TCP) | Sınırlı | Güvenlik duvarı atlatma | TCP ile esnek | IPv6 zayıf, karmaşık |
+| **traceproto.db** | Tam (ICMP/TCP/UDP) | Tam (ICMPv6/TCP/UDP) | Gelişmiş analiz | Çok protokollü | Teknik bilgi gerekir |
+| **traceroute-nanog** | Tam (ICMP/UDP) | Sınırlı | ISP sorun giderme | Detaylı | IPv6 belirsiz, az kullanıcı dostu |
+| **lft.db** | Tam (ICMP/TCP/UDP) | Tam (ICMPv6/TCP/UDP) | Güvenlik, görsel analiz | Görsel çıktı | Kurulum gerekebilir |
+
+## Özet
+- **IPv4**: Tüm araçlar destekler; tcptraceroute.db güvenlik duvarı atlatmada güçlü.
+- **IPv6**: traceroute6.db ve lft.db tam destek; diğerleri sınırlı.
+- **Öneriler**: Genel için lft.db (görsel), IPv6 için traceroute6.db, güvenlik için tcptraceroute.db.
+- **Farklar**: IPv4’te ICMP/UDP öngörülebilir; IPv6’ta ICMPv6 değişken. IPv6 modern ağlarda hızlı.
