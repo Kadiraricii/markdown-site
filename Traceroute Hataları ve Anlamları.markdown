@@ -1,5 +1,5 @@
 # Traceroute: Genel Bilgi ve Karşılaşılabilecek Durumlar
-
+##
 Genel Bilgi
 
 Traceroute, bir ağ paketinin kaynak cihazdan hedef cihaza ulaşırken izlediği yolu (hops) ve her bir durakta geçen süreyi (gecikme) gösteren bir ağ tanılama aracıdır. İnternet üzerindeki bağlantı sorunlarını teşhis etmek, ağ performansını analiz etmek ve rota problemlerini tespit etmek için kullanılır. Çalışma prensibi, ICMP (veya UDP/TCP) paketleri göndererek her bir yönlendiriciden (router) yanıt almaya dayanır. Her yanıt, paketin hangi cihazdan geldiğini ve ne kadar sürede ulaştığını gösterir.
